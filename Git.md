@@ -389,10 +389,18 @@ git commit -m"message2"
 
 git merge github/branch2   不过由于我这里搞错了，我修改的是同一个文件 所以出了一点小小的问题，不过如果是修改不同的文件 就可以了。
 
+## 35 | 不同人修改了同文件的不同区域如何处理？
 
+可以merge一下 ，或者pull  反正 pull就完事了。
 
 ## 36 | 不同人修改了同文件的同一区域如何处理？
 
-首先两个人都已经 git pull 过，其中A率先提交了，这时候B提交的时候 就会报错。
+首先两个人都已经 git pull 过，其中A率先提交了，这时候B提交的时候 就会报错。 
 
-于是我们可以git pull  ，由于git pull 自动包含 git fetch 和 git merge ，由于在同一区域所以就会Conflict 冲突，于是我们要修改冲突的文件，最后 add ，commit 一下 然后 push就可以提交了。
+于是我们可以git pull  ，由于git pull 自动包含 git fetch 和 git merge ，由于在同一区域**所以就会Conflict 冲突**，于是我们要修改冲突的文件，最后 add ，commit 一下 然后 push就可以提交了。
+
+## 37 | 同时变更了文件名和文件内容如何处理？
+
+A改变了文件名，然后提交了push，B对原文件修改了其中的内容
+
+那么B提交的时候会出错，这时候我们只需要pull重新拉一下，他会自动合并。这也是git的强大之处，会看前面的内容，我们会发现其实都是pull，只要pull就完事了。出现conflict解决conflict 就行了。

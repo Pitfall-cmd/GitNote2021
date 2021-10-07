@@ -491,4 +491,5 @@ for your current branch, you must specify a branch on the command line.
 ```
 
 这时候我突然想起来，当时删掉远端branch01的时候，重新fetch的时候，还是有远端的本地记录` remotes/github/branch01 bd52864 branch01 -test1` ,branch01本身还是没有改变，master改变只提交master部分，所以不会报错。
+ 测试：github 端修改文件，同时也恢复了branch01，看看会发生什么情况，写这个文字之前pull的时候发现 branch01被更新了，但是还是提示我需要specify a branch。所以对master修改一下 看看本地master是否也能被pull到
 

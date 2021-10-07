@@ -461,3 +461,23 @@ branch01-test1
 
 master -test01
 
+一些测试与思考：
+
+现在github创建了一个分支branch01，然后本地fecth一下，然后git checkout -b xxx remotexxx 创建并切换。
+
+修改branch01的内容，提交。然后切换到master的内容，修改。提交。
+
+**合并的时候就在github端 提出一个pull request** 合并，由于我修改的是同一个区域，会产生conflict，在github端解决冲突，就可以merge成功了，这里merge的时候有三个选项，就是所谓的分支集成策略，有merge，squash还有rebase。具体可以看本节视频，这三种的意思。
+
+**不一样的地方是我合并之后在github删除了branch0**1，这样删除之后本地的branch01还在，**这时候由于master更新了**，我想pull下来，就报错了
+
+```bash
+You asked to pull from the remote 'github', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+```
+
+由于本地的branch01还在，github却不在了，就会让你指定你要的branch。
+
+指定的命令为 git pull github master ,意思就是去 github的远端 找master分支
+

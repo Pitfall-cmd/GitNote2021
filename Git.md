@@ -491,5 +491,17 @@ for your current branch, you must specify a branch on the command line.
 ```
 
 这时候我突然想起来，当时删掉远端branch01的时候，重新fetch的时候，还是有远端的本地记录` remotes/github/branch01 bd52864 branch01 -test1` ,branch01本身还是没有改变，master改变只提交master部分，所以不会报错。
- 测试：github 端修改文件，同时也恢复了branch01，看看会发生什么情况，写这个文字之前pull的时候发现 branch01被更新了，但是还是提示我需要specify a branch。所以对master修改一下 看看本地master是否也能被pull到
+
+ **测试**：github 端修改文件，同时也恢复了branch01，看看会发生什么情况，写这个文字之前pull的时候发现 branch01被更新了，但是还是提示我需要specify a branch。所以对master修改一下 看看本地master是否也能被pull到
+
+**本地：发现虽然pull到本地了，但他更新的只是==本地的远端==，实际内容没变，相当于只是fetch了一下，仍然需要git pull github master来指定分支，这样就会更新本地了**
+
+```bash
+  branch01                bd52864 [behind 2] branch01 -test1
+* master                  e023aad 49 content add2
+  remotes/github/branch01 20be487 Merge branch 'master' into branch01   
+  remotes/github/master   d4fe52c Update Git.md	      #可以发现hash值都不一样
+```
+
+小结：尝试了许多内容，理解了许多。
 

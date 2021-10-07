@@ -469,7 +469,7 @@ master -test01
 
 **合并的时候就在github端 提出一个pull request** 合并，由于我修改的是同一个区域，会产生conflict，在github端解决冲突，就可以merge成功了，这里merge的时候有三个选项，就是所谓的分支集成策略，有merge，squash还有rebase。具体可以看本节视频，这三种的意思。
 
-**不一样的地方是我合并之后在github删除了branch0**1，这样删除之后本地的branch01还在，**这时候由于master更新了**，我想pull下来，就报错了
+**不一样的地方是我合并之后在github==删除了branch0==**1，这样删除之后本地的branch01还在，**这时候由于master更新了**，我想pull下来，就报错了
 
 ```bash
 You asked to pull from the remote 'github', but did not specify
@@ -504,4 +504,16 @@ for your current branch, you must specify a branch on the command line.
 ```
 
 小结：尝试了许多内容，理解了许多。
+
+小结2：卧槽，主要是因为我那时候先在github端删除了 branch01。删除之后就出现了一系列的问题，后面恢复了也没用，是因为github端恢复之后不是原来的branch01了，需要删除本地的branch01 然后重新checkout 建立连接，
+
+
+
+> merge ，squash，rebase
+
+merge看视频就是两个分支合到一起去，
+
+squash就是把分支的commit 合并成一个放到master上面
+
+rebase和squah很像，他就是不合成一个放到master上面
 

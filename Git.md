@@ -479,5 +479,16 @@ for your current branch, you must specify a branch on the command line.
 
 由于本地的branch01还在，github却不在了，就会让你指定你要的branch。
 
-指定的命令为 git pull github master ,意思就是去 github的远端 找master分支
+指定的命令为 **==git pull github master==** ,意思就是去 github的远端 找master分支
+
+更新完后，我又在本地添加了内容，这时候更新并push到远端，我以为会报错，因为本地branch01还在但是github端的branch01却不再了，**但是没想到他没报错**,
+
+```bash
+  branch01                bd52864 branch01 -test1
+* master                  736b149 Merge pull request #1 from Pitfall-cmd/branch01
+  remotes/github/branch01 bd52864 branch01 -test1
+  remotes/github/master   736b149 Merge pull request #1 from Pitfall-cmd/branch01
+```
+
+这时候我突然想起来，当时删掉远端branch01的时候，重新fetch的时候，还是有远端的本地记录` remotes/github/branch01 bd52864 branch01 -test1` ,branch01本身还是没有改变，master改变只提交master部分，所以不会报错。
 

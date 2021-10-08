@@ -517,3 +517,18 @@ squash就是把分支的commit 合并成一个放到master上面
 
 rebase和squah很像，他就是不合成一个放到master上面
 
+
+
+## 52 | 项目内部怎么实施code review？
+
+去一个仓库的setting里面设置 branch -> 然后添加规则rules  就可以设置 不能直接push，需要pull request ，就可以到达 code review的效果。
+
+## 53 | 团队协作时如何做多分支的集成？
+
+>  Merge情况
+
+A和B合并的时候，发生冲突Conflict，那么解决conflict的时候会 先合并到B上解决冲突，然后merge的时候再回到A
+
+
+
+git push -f origin CommitID:分支名 本地向远端强制回退。 工作中不能用

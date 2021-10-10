@@ -513,9 +513,9 @@ for your current branch, you must specify a branch on the command line.
 
 merge看视频就是两个分支合到一起去，
 
-squash就是把分支的commit 合并成一个放到master上面
+squash就是把分支的commit **合并成一个**放到master上面
 
-rebase和squah很像，他就是不合成一个放到master上面
+rebase和squah很像，他就是**不合成一个**放到master上面
 
 
 
@@ -527,8 +527,31 @@ rebase和squah很像，他就是不合成一个放到master上面
 
 >  Merge情况
 
-A和B合并的时候，发生冲突Conflict，那么解决conflict的时候会 先合并到B上解决冲突，然后merge的时候再回到A
+A和B合并的时候，发生冲突Conflict，那么解决conflict的时候会 先合并到B上解决冲突，然后merge的时候**再回到A**
 
 
 
-git push -f origin CommitID:分支名 本地向远端强制回退。 工作中不能用
+**git push -f remoteName CommitID:分支名 本地向远端强制回退到指定的Commiti。 工作中不能用**
+
+**git push -f remoteName  分支名 把本地的相应分支直接强制push**
+
+> squash
+
+A和B合并的时候，发生冲突Conflict，那么解决conflict的时候会 先合并到B上解决冲突，**然后merge的时候直接在A的基础延申**
+
+
+
+> rebase
+
+A和B合并的时候，发生冲突Conflict，那么解决conflict的时候会 先合并到B上解决冲突，**但是然后就不行了**
+
+**解决方案**：需要先rebase变基
+
+切换到需要变基的分支B，然后基于A变基  git rebase remoteName/A 
+
+然后会让你解决冲突，可能会让你解决多次，按照按提示解决冲突
+
+git add -u     然后 git rebase  --continue  ，反复直到所有commit解决。
+
+最后提交要 git push -f remoteName B 提交，这里要强制。
+

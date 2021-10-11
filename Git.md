@@ -555,3 +555,13 @@ git add -u     然后 git rebase  --continue  ，反复直到所有commit解决�
 
 最后提交要 git push -f remoteName B 提交，这里要强制。
 
+
+
+## 56 | 怎么给项目增加详细的指导文档？
+
+用wiki ，而且wiki是MD文件 本身可以用git来操作，所以可以clone别的文件，然后push
+
+
+
+## 57 | 国内互联网企业为什么喜欢GitLab？
+

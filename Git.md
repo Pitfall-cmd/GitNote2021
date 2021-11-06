@@ -3,9 +3,8 @@
 ## 03 | 使用Git之前需要做的最小配置
 
 添加最小配置:
-git config --local user.name 'lunzi'
-git config --local user.email 'lunzi@163.com'
-
+git config --local user.name 'ybl0147'
+git config --local user.email '1094562539@qq.com'
 
 参数区别:
 git config --local ##只对某个仓库有效,切换到另外一个仓库失效
